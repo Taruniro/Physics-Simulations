@@ -1,16 +1,16 @@
-clear;clc;          % Clear calculation
-r = 2;              % Radius of siren holes
-ro = 2;             % Radius of air jet orifice
-h = 50;             % Radius of concentric circle
-n = 16;             % Number of holes along concentric circle (equally distanced)
-l = 2*pi*h/n;       % Distance between 2 consecutive siren holes
-s_rpm = 1200;       % Rotating speed of siren disc (rpm)
-s_rps = 1200/60;    % Rotating speed of siren disc (rps)
+clear;clc;              % Clear calculation
+r = 2;                  % Radius of siren holes
+ro = 2;                 % Radius of air jet orifice
+h = 50;                 % Radius of concentric circle
+nh = 16;                % Number of holes along concentric circle (equally distanced)
+l = 2*pi*h/nh;          % Distance between 2 consecutive siren holes
+s_rpm = 1200;           % Rotating speed of siren disc (rpm)
+s_rps = 1200/60;        % Rotating speed of siren disc (rps)
 
-Fs = 44100;         %
-dt = 1/Fs;
-step = 2*pi*h*s_rps*dt;
-dmax = 2*pi*h*100;
+Fs = 44100;             % Total time interval
+dt = 1/Fs;              % Time step interval
+step = 2*pi*h*s_rps*dt; % Spatial step interval
+dmax = 2*pi*h*100;      % Maximum Distance
 d = 0:step:dmax;
 n = length(d);
 a = zeros(n,1);
